@@ -1,0 +1,6 @@
+.headerWrapper{
+  height: 100px;
+  width: 100%;
+  display: flex;
+  background-color: #d8d8;
+}
