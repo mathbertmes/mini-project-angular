@@ -1,19 +1,19 @@
-<mat-nav-list>
+<mat-nav-list autosize>
   <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
-      <mat-icon>home</mat-icon>
-      <span class="nav-caption">Home</span>
+      <mat-icon matListItemIcon>home</mat-icon>
+      <span matListItemTitle class="nav-caption">Home</span>
   </a>
   <a mat-list-item routerLink="/owner" (click)="onSidenavClose()">
-      <mat-icon>assignment_ind</mat-icon>
-      <span class="nav-caption">Invoices</span>
+      <mat-icon matListItemIcon>assignment_ind</mat-icon>
+      <span matListItemTitle class="nav-caption">Invoices</span>
   </a>
   <a mat-list-item routerLink="#" (click)="onSidenavClose()">
-      <mat-icon>account_balance</mat-icon>
-      <span class="nav-caption">Add product</span>
+      <mat-icon matListItemIcon>account_balance</mat-icon>
+      <span matListItemTitle class="nav-caption">Add product</span>
   </a>
   <mat-list-item [matMenuTriggerFor]="menu">
-      <mat-icon>unfold_more</mat-icon>
-      <a matline>profile</a>
+      <mat-icon matListItemIcon>unfold_more</mat-icon>
+      <a matListItemTitle matline>profile</a>
   </mat-list-item>
   <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="onSidenavClose()">profile</button>
