@@ -15,7 +15,7 @@ import { MatListModule } from '@angular/material/list';
   imports: [
     CommonModule, MatSidenavModule, MatToolbarModule, MatIconModule,
     MatButtonModule, MatListModule, MatMenuModule,
-    MatTabsModule,
+    MatTabsModule
   ],
   exports: [
     MatSidenavModule, MatToolbarModule, MatIconModule,
