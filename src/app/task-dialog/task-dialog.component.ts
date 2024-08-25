@@ -6,11 +6,12 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Task } from '../components/task/task.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-task-dialog',
   standalone: true,
-  imports: [MaterialModule, MatDialogModule, MatInputModule, FormsModule],
+  imports: [MaterialModule, MatDialogModule, MatInputModule, FormsModule, CommonModule],
   templateUrl: './task-dialog.component.html',
   styleUrl: './task-dialog.component.css'
 })
@@ -27,7 +28,7 @@ export class TaskDialogComponent {
   cancel(): void {
     this.data.task.title = this.backupTask.title;
     this.data.task.description = this.backupTask.description;
-    this.dialogRef.close(this.data);
+    this.dialogRef.close(undefined);
   }
 }
 
