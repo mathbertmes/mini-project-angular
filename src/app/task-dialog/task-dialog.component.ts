@@ -37,6 +37,11 @@ export interface TaskDialogData {
   enableDelete: boolean;
 }
 
+export interface TaskDialogResultNewTask {
+  task: {title: string, description: string};
+  delete?: boolean;
+}
+
 export interface TaskDialogResult {
   task: Task;
   delete?: boolean;

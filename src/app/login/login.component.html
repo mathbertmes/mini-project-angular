@@ -1,7 +1,7 @@
 <div class="contentContainer">
   <div class="formWrapper">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div>
+      <div class="fieldContainer">
         <label for="email">Email</label>
         <input
           matInput
@@ -18,7 +18,7 @@
           <div *ngIf="email?.hasError('email')">Email must be email type</div>
         </div>
       </div>
-      <div>
+      <div class="fieldContainer">
         <label for="password">Password</label>
         <input
           id="password"
@@ -33,7 +33,7 @@
         >
           <div *ngIf="password?.hasError('required')">Password is required.</div>
           <div *ngIf="password?.hasError('minlength')">
-            Password must be at least 4 characters long.
+            Password must be at least 6 characters long.
           </div>
         </div>
       </div>

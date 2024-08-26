@@ -14,4 +14,5 @@ import { MatCardModule } from '@angular/material/card';
 export class TaskComponent {
   @Input() task: Task | null = null;
   @Output() edit = new EventEmitter<Task>();
+  @Output() delete = new EventEmitter<string>();
 }
