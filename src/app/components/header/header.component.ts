@@ -1,6 +1,6 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { MaterialModule } from '../../material/material.module';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../auth.service';
 import { NgIf } from '@angular/common';
 
@@ -14,6 +14,7 @@ import { NgIf } from '@angular/common';
 export class HeaderComponent {
   @Output() public sideNavToggle = new EventEmitter();
   authService = inject(AuthService)
+  router = inject(Router)
     
     constructor() {}
     ngOnInit(): void {}
@@ -24,5 +25,7 @@ export class HeaderComponent {
 
   logout(): void{
     this.authService.logout()
+    localStorage.removeItem("userId")
+    this.router.navigateByUrl("/login")
   }
 }
