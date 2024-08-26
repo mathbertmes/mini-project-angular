@@ -1,5 +1,5 @@
 import { Component, importProvidersFrom, inject, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './material/material.module';
 import { SideNavComponent } from "./components/side-nav/side-nav.component";
@@ -19,21 +19,14 @@ import { Task } from './components/task/task.interface';
 })
 export class AppComponent implements OnInit{
   authService = inject(AuthService);
-  todo: Task[] = [
-    {
-      title: 'Buy milk',
-      description: 'Go to the store and buy milk'
-    },
-    {
-      title: 'Create a Kanban app',
-      description: 'Using Firebase and Angular create a Kanban app!'
-    }
-  ];
+  
 
   ngOnInit(): void {
+    
     this.authService.user$.subscribe((user: any) => {
       if(user){
         this.authService.currentUserSigned.set({
+          uid: user.uid,
           email: user.email!,
           username: user.displayName!,
         })
