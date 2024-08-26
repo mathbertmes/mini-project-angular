@@ -1,7 +1,7 @@
 <div class="contentContainer">
   <div class="formWrapper">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div>
+      <div class="fieldContainer">
         <label for="username">Username</label>
         <input
           matInput
@@ -16,7 +16,7 @@
           <div *ngIf="username?.hasError('required')">Username is required.</div>
         </div>
       </div>
-      <div>
+      <div class="fieldContainer">
         <label for="email">Email</label>
         <input
           matInput
@@ -33,7 +33,7 @@
           <div *ngIf="email?.hasError('email')">Email must be email type</div>
         </div>
       </div>
-      <div>
+      <div class="fieldContainer">
         <label for="password">Password</label>
         <input
           id="password"
@@ -48,11 +48,11 @@
         >
           <div *ngIf="password?.hasError('required')">Password is required.</div>
           <div *ngIf="password?.hasError('minlength')">
-            Password must be at least 4 characters long.
+            Password must be at least 6 characters long.
           </div>
         </div>
       </div>
-      <div>
+      <div class="fieldContainer">
         <label for="confirmPassword">Confirm Password</label>
         <input
           id="confirmPassword"
@@ -74,7 +74,7 @@
         </div>
       </div>
   
-      <button class="success" [disabled]="!form.valid" type="submit">Login</button>
+      <button class="success" [disabled]="!form.valid" type="submit">Register</button>
     </form>
   </div>
   </div>
