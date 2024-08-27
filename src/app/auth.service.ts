@@ -30,7 +30,9 @@ export class AuthService {
       password
     ).then((response) => {
       updateProfile(response.user, { displayName: username });
+      localStorage.setItem("username", username);
       localStorage.setItem('userId', response.user.uid);
+      
     });
     return from(promise);
   }
@@ -40,7 +42,10 @@ export class AuthService {
       this.firebaseAuth,
       email,
       password
-    ).then((response) => localStorage.setItem('userId', response.user.uid));
+    ).then((response) => {
+      localStorage.setItem("username", response.user.displayName!)
+      localStorage.setItem('userId', response.user.uid)
+    })
     return from(promise);
   }
 

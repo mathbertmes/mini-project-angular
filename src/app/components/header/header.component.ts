@@ -15,6 +15,7 @@ export class HeaderComponent {
   @Output() public sideNavToggle = new EventEmitter();
   authService = inject(AuthService)
   router = inject(Router)
+  localStorage = localStorage
     
     constructor() {}
     ngOnInit(): void {}
@@ -26,6 +27,7 @@ export class HeaderComponent {
   logout(): void{
     this.authService.logout()
     localStorage.removeItem("userId")
+    localStorage.removeItem("username")
     this.router.navigateByUrl("/login")
   }
 }
